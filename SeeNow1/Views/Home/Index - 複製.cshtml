@@ -1,0 +1,48 @@
+﻿@page
+<div class="container">
+    <input id="redBtn" type="button" style="background-color:red;border:dashed;width:70px;height:70px" value="紅" />
+    <input id="blueBtn" type="button" style="background-color:aqua;border:dashed;width:70px;height:70px" value="藍" />
+    <input id="greenBtn" type="button" style="background-color:chartreuse;border:dashed;width:70px;height:70px" value="綠" />
+    <input id="yellowBtn" type="button" style="background-color:yellow;border:dashed;width:70px;height:70px" value="黄" />
+    <br />
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-2">&nbsp;</div>
+
+        <div class="col-2">
+
+            User..........<input type="text" id="userInput" />
+            <br />
+            Message...<input type="text" id="messageInput" />
+            <input type="button" id="sendButton" value="Send Message" />
+            @*group*@
+            <select id="group">
+                <option>貓派</option>
+                <option>狗派</option>
+            </select>
+            <button type="button" id="addGroupBtn">加入群組</button>
+            <br>
+            姓名：<input id="name" type="text"><br>
+            訊息<input id="msg" type="text">
+            <br>
+            <button type="Button" id="submitGroupBtn">送出給群組</button>
+            <button type="Button" id="submitAllBtn">送出給所有人</button>
+            <br>
+            <div id="msgDiv"></div>
+            @*group*@
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">&nbsp;</div>
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>

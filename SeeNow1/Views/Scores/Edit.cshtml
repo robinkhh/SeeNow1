@@ -1,0 +1,44 @@
+﻿@model SeeNow1.Models.Score
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Score</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="PlayerID" class="control-label"></label>
+                <select asp-for="PlayerID" class="form-control" asp-items="ViewBag.PlayerID"></select>
+                <span asp-validation-for="PlayerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayerScore" class="control-label"></label>
+                <input asp-for="PlayerScore" class="form-control" />
+                <span asp-validation-for="PlayerScore" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayTime" class="control-label"></label>
+                <input asp-for="PlayTime" class="form-control" />
+                <span asp-validation-for="PlayTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
